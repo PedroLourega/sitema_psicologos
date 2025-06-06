@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <!-- Linking Font Awesome for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Style -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <title>Connect Psicológos | By. Pedro Lourega</title>
+</head>
+<body>
+     
+   <body>
+    <!-- Scroll Bar-->
+    <div id="wrapper">
+        <div class="scrollbar" id="style-15">
+            <div class="force-overflow"></div>
+        </div>
+    </div>
+    
+    <!--Header / Navbar-->
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <h2 class="logo-text">🧠Connect Psicológos</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">Profissionais</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Acesso ao Sistema</a>
+                </li>
+            </ul>
+
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+    <main>
+
+        <!-- Hero section -->
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-details">
+                    <h2 class="title">Cuide de sua saúde mental agora mesmo!</h2>
+                    <h3 class="subtitle">Make your day great with our special coffee!</h3>
+                    <p class="description">Welcome to our coffee paradise, where every bean tells a story and every cup
+                        sparks joy.</p>
+                    <div class="buttons">
+                        <a href="#contact" class="button contact-us">Contato</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapped">
+                    <img src="{{ url_for('static', filename='images/psicologo-banner.png') }}" alt="Hero" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section class="about-section" id="about">
+            <div class="section-content">
+                <div class="about-image-wrapper">
+                    <img src="{{ url_for('static', filename='images/about_section.png') }}" alt="About" class="about-image">
+                </div>
+                <div class="about-details">
+                    <h2 class="section-tittle">Sobre Nós</h2>
+                    <p class="text">At Coffee House in Berndorf, Germany, we pride ourselves on being a go-to
+                        destination for coffee lovers and conversation seekers alike. We're dedicated to providing an
+                        exceptional coffee experience in a cozy and inviting atmosphere, where guests can relax, unwind,
+                        and enjoy their time in confort.
+                    </p>
+                    <div class="social-link-list">
+                        <a href="https://www.facebook.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/i/flow/login" class="social-link"><i class="fa-brands fa-x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!--Testimonials Section-->
+        <section class="testimonials-section" id="testimonials">
+            <h2 class="section-tittle">Testimonials</h2>
+            <div class="section-content">
+                <div class="slider-container swiper">
+                    <div class="slider-wrapper">
+                        <ul class="testimonials-list swiper-wrapper">
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-1.jpg" alt="User" class="user-image">
+                                <h3 class="name">Sarah Johnson</h3>
+                                <i class="feedback">"Loved the French roast. Perfectly balanced and rich. Will order
+                                    again!"</i>
+                            </li>
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-2.jpg" alt="User" class="user-image">
+                                <h3 class="name">James Wilson</h3>
+                                <i class="feedback">"Great espresso blend! Smooth and bold flavor. fast shipping
+                                    too!"</i>
+                            </li>
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-3.jpg" alt="User" class="user-image">
+                                <h3 class="name">Michael Brown</h3>
+                                <i class="feedback">"Fantastic mocha flavor. Fresh and aromatic. Quick shipping!"</i>
+                            </li>
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-4.jpg" alt="User" class="user-image">
+                                <h3 class="name">Emily Harris</h3>
+                                <i class="feedback">"Excellent quality! Fresh beans and quick delivery. Highly
+                                    recommend."</i>
+                            </li>
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-5.jpg" alt="User" class="user-image">
+                                <h3 class="name">Anthony Thompson</h3>
+                                <i class="feedback">"Best decaf I've tried! Smooth and flavorful. Arrived promptly."</i>
+                            </li>
+                        </ul>
+
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-slide-button swiper-button-prev"></div>
+                        <div class="swiper-slide-button swiper-button-next"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section-->
+        <section class="contact-section" id="contact">
+            <h2 class="section-tittle">Contato</h2>
+            <div class="section-content">
+                <ul class="contact-info-list">
+                    <li class="contact-info">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <p>1975 Campsite Avenue, Wilderness, CA 98765</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p>contato@connectpsico.com.br</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+55 (51) 9 9789-4420</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Segunda-feira - Sexta-feira: 09:00  - 17:00 </p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Saturday - Friday: 10:00 AM - 3:00 PM</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Sunday: Closed</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-brands fa-github"></i>
+                        <p src="www.github.com/PedroLourega">www.github.com/PedroLourega</p>
+                    </li>
+                </ul>
+
+                <form action="#" class="contact-form">
+                    <input type="text" placeholder="Seu nome" class="form-input" required>
+                    <input type="email" placeholder="Seu email" class="form-input" required>
+                    <textarea placeholder="Sua mensagem" class="form-input" required></textarea>
+                    <button class="submit-button">Envuar
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footers section-->
+        <footer class="footer-section">
+            <div class="section-content">
+                <p class="copyright-text">© 2025 Connect Psicólogos</p>
+
+                <div class="social-link-list">
+                        <a href="https://www.facebook.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/i/flow/login" class="social-link"><i class="fa-brands fa-x"></i></a>
+                    </div>
+
+                    <p class="policy-text">
+                        <a href="#" class="policy-link">Privacy policy</a>
+                        <span class="separator">•</span>
+                        <a href=""# class="policy-link">Refund policy</a>
+                    </p>
+                </div>
+        </footer>
+    </main>
+
+    <!--Linking Swiper Script-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--Linking Custom Script-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
