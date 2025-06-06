@@ -13,12 +13,6 @@
 <body>
      
    <body>
-    <!-- Scroll Bar-->
-    <div id="wrapper">
-        <div class="scrollbar" id="style-15">
-            <div class="force-overflow"></div>
-        </div>
-    </div>
     
     <!--Header / Navbar-->
     <header>
@@ -30,7 +24,7 @@
                 <button id="menu-close-button" class="fas fa-times"></button>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Página inicial</a>
                 </li>
                 <li class="nav-item">
                     <a href="#about" class="nav-link">Sobre</a>
@@ -56,9 +50,8 @@
             <div class="section-content">
                 <div class="hero-details">
                     <h2 class="title">Cuide de sua saúde mental agora mesmo!</h2>
-                    <h3 class="subtitle">Make your day great with our special coffee!</h3>
-                    <p class="description">Welcome to our coffee paradise, where every bean tells a story and every cup
-                        sparks joy.</p>
+                    <h3 class="subtitle">Equipe de Psicólogos profissionais!</h3>
+                    <p class="description">Na Connect você encontrará profissionais que atendem em todas as modalidades da psicologia.</p>
                     <div class="buttons">
                         <a href="#contact" class="button contact-us">Contato</a>
                     </div>
@@ -93,37 +86,37 @@
 
          <!--Testimonials Section-->
         <section class="testimonials-section" id="testimonials">
-            <h2 class="section-tittle">Testimonials</h2>
+            <h2 class="section-tittle">Nossos Profissionais</h2>
             <div class="section-content">
                 <div class="slider-container swiper">
                     <div class="slider-wrapper">
                         <ul class="testimonials-list swiper-wrapper">
                             <li class="testimonial swiper-slide">
-                                <img src="images/user-1.jpg" alt="User" class="user-image">
-                                <h3 class="name">Sarah Johnson</h3>
+                                <img src="{{ url_for('static', filename='images/afonso_psico.png') }}" alt="User" class="user-image">
+                                <h3 class="name">Afonso Silva</h3>
                                 <i class="feedback">"Loved the French roast. Perfectly balanced and rich. Will order
                                     again!"</i>
                             </li>
                             <li class="testimonial swiper-slide">
-                                <img src="images/user-2.jpg" alt="User" class="user-image">
-                                <h3 class="name">James Wilson</h3>
+                                <img src="{{ url_for('static', filename='images/cleber_psico.png') }}" alt="User" class="user-image">
+                                <h3 class="name">Cleber Rodrigue</h3>
                                 <i class="feedback">"Great espresso blend! Smooth and bold flavor. fast shipping
                                     too!"</i>
                             </li>
                             <li class="testimonial swiper-slide">
-                                <img src="images/user-3.jpg" alt="User" class="user-image">
-                                <h3 class="name">Michael Brown</h3>
+                                <img src="{{ url_for('static', filename='images/fernanda_psico.png') }}" alt="User" class="user-image">
+                                <h3 class="name">Fernanda Ribas</h3>
                                 <i class="feedback">"Fantastic mocha flavor. Fresh and aromatic. Quick shipping!"</i>
                             </li>
                             <li class="testimonial swiper-slide">
-                                <img src="images/user-4.jpg" alt="User" class="user-image">
-                                <h3 class="name">Emily Harris</h3>
+                                <img src="{{ url_for('static', filename='images/Marcelo_psico.png') }}" alt="User" class="user-image">
+                                <h3 class="name">Marcelo Alcantra</h3>
                                 <i class="feedback">"Excellent quality! Fresh beans and quick delivery. Highly
                                     recommend."</i>
                             </li>
                             <li class="testimonial swiper-slide">
-                                <img src="images/user-5.jpg" alt="User" class="user-image">
-                                <h3 class="name">Anthony Thompson</h3>
+                                <img src="{{ url_for('static', filename='images/vera_psico.png') }}" alt="User" class="user-image">
+                                <h3 class="name">Vera Maia</h3>
                                 <i class="feedback">"Best decaf I've tried! Smooth and flavorful. Arrived promptly."</i>
                             </li>
                         </ul>
@@ -143,7 +136,7 @@
                 <ul class="contact-info-list">
                     <li class="contact-info">
                         <i class="fa-solid fa-location-crosshairs"></i>
-                        <p>1975 Campsite Avenue, Wilderness, CA 98765</p>
+                        <p>Av.Paulista, São Paulo, SP. nº 1975 - 91980-870</p>
                     </li>
                     <li class="contact-info">
                         <i class="fa-regular fa-envelope"></i>
@@ -155,15 +148,15 @@
                     </li>
                     <li class="contact-info">
                         <i class="fa-regular fa-clock"></i>
-                        <p>Segunda-feira - Sexta-feira: 09:00  - 17:00 </p>
+                        <p>Segunda-feira à Quinta-feira: das 09:00  às 17:00 </p>
                     </li>
                     <li class="contact-info">
                         <i class="fa-regular fa-clock"></i>
-                        <p>Saturday - Friday: 10:00 AM - 3:00 PM</p>
+                        <p>Sexta-feira à Sábado das 10:00 às 15:00 </p>
                     </li>
                     <li class="contact-info">
                         <i class="fa-regular fa-clock"></i>
-                        <p>Sunday: Closed</p>
+                        <p>Domingo: Fechado</p>
                     </li>
                     <li class="contact-info">
                         <i class="fa-brands fa-github"></i>
@@ -175,7 +168,7 @@
                     <input type="text" placeholder="Seu nome" class="form-input" required>
                     <input type="email" placeholder="Seu email" class="form-input" required>
                     <textarea placeholder="Sua mensagem" class="form-input" required></textarea>
-                    <button class="submit-button">Envuar
+                    <button class="submit-button">Enviar
                     </button>
                 </form>
             </div>
