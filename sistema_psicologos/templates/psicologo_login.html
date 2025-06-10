@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <!-- Linking Font Awesome for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Style -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <title>Connect Psicológos | By. Pedro Lourega</title>
+</head>
+<body>
+     
+   <body>
+    
+    <!--Header / Navbar-->
+    <header>
+        <nav class="navbar section-content">
+            <a href="{{ url_for('home') }}" class="nav-logo">
+                <h2 class="logo-text">Connect Psicológos</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-item">
+                    <a href="{{ url_for('escolha_acesso') }}" class="nav-link">Voltar</a>
+                </li>
+                
+
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+    <main>
+
+        <!-- Hero section -->
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-details">
+                    <h2>Acesso Psicólogo</h2>
+                        <div>
+        <form class="contact-form" method="POST" action="/login/psicologo">
+            <input class="form-input" type="text" name="username" placeholder="Usuário" required>
+
+            <input class="form-input" type="password" name="password" placeholder="Senha" required>
+
+            <div class="submit-button">
+                <button id="acess-button" class="button contact-us" type="submit">Entrar</button>
+            </div>
+            </div>
+            <br>
+        </form>           
+                </div>
+                <div class="hero-image-wrapped">
+                    <img src="{{ url_for('static', filename='images/psicologo-banner.png') }}" alt="Hero" class="hero-image">
+                </div>
+        </section>
+    
+
+        <!-- Footers section-->
+        <footer class="footer-section">
+            <div class="section-content">
+                <p class="copyright-text">© 2025 Connect Psicólogos</p>
+
+                <div class="social-link-list">
+                        <a href="https://www.facebook.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/i/flow/login" class="social-link"><i class="fa-brands fa-x"></i></a>
+                    </div>
+
+                    <p class="policy-text">
+                        <a href="#" class="policy-link">Privacy policy</a>
+                        <span class="separator">•</span>
+                        <a href=""# class="policy-link">Refund policy</a>
+                    </p>
+                </div>
+        </footer>
+    </main>
+
+    <!--Linking Swiper Script-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--Linking Custom Script-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}

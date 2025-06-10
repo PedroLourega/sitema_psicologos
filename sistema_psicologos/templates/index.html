@@ -17,7 +17,7 @@
     <!--Header / Navbar-->
     <header>
         <nav class="navbar section-content">
-            <a href="#" class="nav-logo">
+            <a href="{{ url_for('home') }}" class="nav-logo">
                 <h2 class="logo-text">Connect Psicológos</h2>
             </a>
             <ul class="nav-menu">
@@ -36,7 +36,7 @@
                     <a href="#contact" class="nav-link">Contato</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Acesso ao Sistema</a>
+                    <a href="{{ url_for('escolha_acesso') }}" class="nav-link">Acesso ao Sistema</a>
                 </li>
             </ul>
 
@@ -50,10 +50,10 @@
             <div class="section-content">
                 <div class="hero-details">
                     <h2 class="title">Cuide de sua saúde mental agora mesmo!</h2>
-                    <h3 class="subtitle">Equipe de Psicólogos profissionais!</h3>
-                    <p class="description">Na Connect você encontrará profissionais que atendem em todas as modalidades da psicologia.</p>
+                    <h3 class="subtitle">Equipe de psicólogos profissionais que atendem remotamente em todo o Brasil.</h3>
+                    <p class="description">Na PsicoConnect, você encontrará profissionais experientes, preparados para te ouvir e te acompanhar em todas as modalidades da psicologia. Tudo isso com conforto, privacidade e segurança, onde quer que você esteja...</p>
                     <div class="buttons">
-                        <a href="#contact" class="button contact-us">Contato</a>
+                        <a href="#contact" class="button contact-us">Agende uma consulta agora mesmo</a>
                     </div>
                 </div>
                 <div class="hero-image-wrapped">
@@ -70,10 +70,13 @@
                 </div>
                 <div class="about-details">
                     <h2 class="section-tittle">Sobre Nós</h2>
-                    <p class="text">At Coffee House in Berndorf, Germany, we pride ourselves on being a go-to
-                        destination for coffee lovers and conversation seekers alike. We're dedicated to providing an
-                        exceptional coffee experience in a cozy and inviting atmosphere, where guests can relax, unwind,
-                        and enjoy their time in confort.
+                    <p class="text">A PsicoConnect nasceu com um propósito simples: tornar o cuidado com a saúde mental mais acessível, humano e sem fronteiras.
+
+Nossa equipe é formada por psicólogos qualificados, especializados em diferentes abordagens da psicologia, e comprometidos com o bem-estar de cada paciente.
+
+Oferecemos atendimento 100% online, respeitando o seu tempo, seu espaço e sua individualidade. Atendemos pessoas de todo o Brasil, promovendo escuta ativa, acolhimento e evolução pessoal contínua.
+
+Acreditamos que todos merecem ter acesso a um acompanhamento psicológico de qualidade, e estamos aqui para isso.
                     </p>
                     <div class="social-link-list">
                         <a href="https://www.facebook.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-facebook"></i></a>
@@ -94,30 +97,27 @@
                             <li class="testimonial swiper-slide">
                                 <img src="{{ url_for('static', filename='images/afonso_psico.png') }}" alt="User" class="user-image">
                                 <h3 class="name">Afonso Silva</h3>
-                                <i class="feedback">"Loved the French roast. Perfectly balanced and rich. Will order
-                                    again!"</i>
+                                <i class="feedback">Psicanálise: trabalha questões profundas como traumas, identidade e relações.</i>
                             </li>
                             <li class="testimonial swiper-slide">
                                 <img src="{{ url_for('static', filename='images/cleber_psico.png') }}" alt="User" class="user-image">
                                 <h3 class="name">Cleber Rodrigue</h3>
-                                <i class="feedback">"Great espresso blend! Smooth and bold flavor. fast shipping
-                                    too!"</i>
+                                <i class="feedback">Psicologia do Trabalho: foco em estresse, carreira e ambiente profissional.</i>
                             </li>
                             <li class="testimonial swiper-slide">
                                 <img src="{{ url_for('static', filename='images/fernanda_psico.png') }}" alt="User" class="user-image">
                                 <h3 class="name">Fernanda Ribas</h3>
-                                <i class="feedback">"Fantastic mocha flavor. Fresh and aromatic. Quick shipping!"</i>
+                                <i class="feedback">Psicologia Clínica: atua com ansiedade, autoestima e acolhimento emocional.</i>
                             </li>
                             <li class="testimonial swiper-slide">
                                 <img src="{{ url_for('static', filename='images/Marcelo_psico.png') }}" alt="User" class="user-image">
                                 <h3 class="name">Marcelo Alcantra</h3>
-                                <i class="feedback">"Excellent quality! Fresh beans and quick delivery. Highly
-                                    recommend."</i>
+                                <i class="feedback">Terapia Cognitivo-Comportamental: foco em depressão, ansiedade e autoconhecimento.</i>
                             </li>
                             <li class="testimonial swiper-slide">
                                 <img src="{{ url_for('static', filename='images/vera_psico.png') }}" alt="User" class="user-image">
                                 <h3 class="name">Vera Maia</h3>
-                                <i class="feedback">"Best decaf I've tried! Smooth and flavorful. Arrived promptly."</i>
+                                <i class="feedback">Psicologia Infantil: especialista em desenvolvimento, vínculos familiares e escola.</i>
                             </li>
                         </ul>
 
