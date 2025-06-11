@@ -1,1 +1,161 @@
-Conseguiu
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <!-- Linking Font Awesome for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Style -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dashboard Psicólogo | Connect Psicológos</title>
+</head>
+<body>
+    
+    <!--Header / Navbar-->
+    <header>
+        <nav class="navbar section-content">
+            <a href="{{ url_for('home') }}" class="nav-logo">
+                <h2 class="logo-text">Connect Psicológos</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item">
+                    <span class="nav-link">Bem-vindo, {{ psicologo_nome }}!</span>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link">Sair</a>
+                </li>
+            </ul>
+
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Dashboard Header -->
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-details">
+                    <h2 class="title">Dashboard do Psicólogo</h2>
+                    <h3 class="subtitle">Gerencie consultas e pacientes</h3>
+                    <p class="description">Aqui você pode visualizar todas as consultas agendadas, criar novos acessos de pacientes e agendar novas consultas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <section class="about-section">
+                    <div class="section-content">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                <p class="text">{{ message }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </section>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Consultas Agendadas -->
+        <section class="about-section">
+            <div class="section-content">
+                <h2 class="section-tittle">Consultas Agendadas</h2>
+                
+                {% if consultas %}
+                <div class="table-container">
+                    <table class="consultas-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Paciente</th>
+                                <th>CPF</th>
+                                <th>Data Nasc.</th>
+                                <th>Psicólogo</th>
+                                <th>Data</th>
+                                <th>Horário</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for consulta in consultas %}
+                            <tr>
+                                <td>{{ consulta.paciente_id }}</td>
+                                <td>{{ consulta.paciente_nome }}</td>
+                                <td>{{ consulta.cpf }}</td>
+                                <td>{{ consulta.data_nascimento }}</td>
+                                <td>{{ consulta.psicologo_nome }}</td>
+                                <td>{{ consulta.data_consulta }}</td>
+                                <td>{{ consulta.horario }}</td>
+                                <td>{{ consulta.status }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="text">Nenhuma consulta agendada ainda.</p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Criar Novo Paciente -->
+        <section class="contact-section">
+            <h2 class="section-tittle">Criar Novo Paciente</h2>
+            <div class="section-content">
+                <form action="{{ url_for('criar_novo_paciente') }}" method="POST" class="contact-form">
+                    <input type="text" name="nome" placeholder="Nome completo" class="form-input" required>
+                    <input type="text" name="cpf" placeholder="CPF" class="form-input" required>
+                    <input type="date" name="data_nascimento" placeholder="Data de Nascimento" class="form-input" required>
+                    <input type="text" name="username" placeholder="Nome de usuário (login)" class="form-input" required>
+                    <input type="password" name="password" placeholder="Senha" class="form-input" required>
+                    <button type="submit" class="submit-button">Criar Paciente</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Agendar Nova Consulta -->
+        <section class="contact-section">
+            <h2 class="section-tittle">Agendar Nova Consulta</h2>
+            <div class="section-content">
+                <form action="{{ url_for('nova_consulta') }}" method="POST" class="contact-form">
+                    <select name="paciente_id" class="form-input" required>
+                        <option value="">Selecione o Paciente</option>
+                        {% for paciente in pacientes %}
+                        <option value="{{ paciente.id }}">{{ paciente.nome }} ({{ paciente.cpf }})</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <select name="psicologo_id" class="form-input" required>
+                        <option value="">Selecione o Psicólogo</option>
+                        {% for psicologo in psicologos %}
+                        <option value="{{ psicologo.id }}">{{ psicologo.nome }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <input type="date" name="data_consulta" placeholder="Data da Consulta" class="form-input" required>
+                    <input type="time" name="horario" placeholder="Horário" class="form-input" required>
+                    <button type="submit" class="submit-button">Agendar Consulta</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-section">
+            <div class="section-content">
+                <p class="copyright-text">© 2025 Connect Psicólogos - Dashboard Psicólogo</p>
+                <div class="social-link-list">
+                    <a href="https://www.facebook.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/i/flow/login" class="social-link"><i class="fa-brands fa-x"></i></a>
+                    <a href="https://github.com/PedroLourega" target="blank" class="social-link"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!--Linking Custom Script-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

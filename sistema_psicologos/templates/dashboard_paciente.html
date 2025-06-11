@@ -1,1 +1,125 @@
-Conseguiu
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <!-- Linking Font Awesome for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Style -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dashboard Paciente | Connect Psicológos</title>
+</head>
+<body>
+    
+    <!--Header / Navbar-->
+    <header>
+        <nav class="navbar section-content">
+            <a href="{{ url_for('home') }}" class="nav-logo">
+                <h2 class="logo-text">Connect Psicológos</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                
+                <li class="nav-item">
+                    <span class="nav-link">Bem-vindo, {{ paciente_nome }}!</span>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link">Sair</a>
+                </li>
+            </ul>
+
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Dashboard Header -->
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-details">
+                    <h2 class="title">Suas Consultas</h2>
+                    <h3 class="subtitle">Acompanhe seus agendamentos</h3>
+                    <p class="description">Aqui você pode visualizar todas as suas consultas agendadas com nossos psicólogos especializados.</p>
+                </div>
+                <div class="hero-image-wrapped">
+                    <img src="{{ url_for('static', filename='images/psicologo-banner.png') }}" alt="Consultas" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultas do Paciente -->
+        <section class="about-section">
+            <div class="section-content">
+                <h2 class="section-tittle">Minhas Consultas</h2>
+                
+                {% if consultas %}
+                    {% for consulta in consultas %}
+                    <div class="consulta-card">
+                        <div class="about-details">
+                            <h3 class="name">{{ consulta.psicologo_nome }}</h3>
+                            <p class="text">
+                                <strong>Especialidade:</strong> {{ consulta.especialidade }}<br>
+                                <strong>Data:</strong> {{ consulta.data_consulta }}<br>
+                                <strong>Horário:</strong> {{ consulta.horario }}<br>
+                                <strong>Status:</strong> {{ consulta.status }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                <div class="about-details">
+                    <h3 class="name">Nenhuma consulta agendada</h3>
+                    <p class="text">
+                        Você ainda não possui consultas agendadas. Entre em contato conosco para agendar sua primeira consulta!
+                    </p>
+                    <div class="buttons">
+                        <a href="{{ url_for('home') }}#contact" class="button contact-us">Agendar Consulta</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Informações de Contato -->
+        <section class="contact-section">
+            <h2 class="section-tittle">Precisa de Ajuda?</h2>
+            <div class="section-content">
+                <ul class="contact-info-list">
+                    <li class="contact-info">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p>contato@connectpsico.com.br</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+55 (51) 9 9789-4420</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Segunda-feira à Quinta-feira: das 09:00 às 17:00</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Sexta-feira à Sábado das 10:00 às 15:00</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-section">
+            <div class="section-content">
+                <p class="copyright-text">© 2025 Connect Psicólogos - Dashboard Paciente</p>
+                <div class="social-link-list">
+                    <a href="https://www.facebook.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/?locale=pt_BR" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/i/flow/login" class="social-link"><i class="fa-brands fa-x"></i></a>
+                    <a href="https://github.com/PedroLourega" target="blank" class="social-link"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!--Linking Custom Script-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

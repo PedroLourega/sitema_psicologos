@@ -647,3 +647,63 @@ header .navbar {
 #acess-button{
     margin-top: 10px;
 }
+
+/* Estilos para Dashboard */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.consultas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.consultas-table th,
+.consultas-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.consultas-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.consultas-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.consulta-card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #007bff;
+}
+
+.alert {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
