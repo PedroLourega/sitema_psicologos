@@ -13,10 +13,12 @@ A aplicação simula o funcionamento de uma empresa fictícia chamada **Connect 
 
 ## 🛠 Tecnologias Utilizadas
 
-- **Frontend**: HTML, CSS, JavaScript (animações e alertas simples)
-- **Backend**: Python com Flask
-- **Banco de Dados**: SQLite (via biblioteca padrão do Python)
-- **Design**: Interface intuitiva, limpa e responsiva
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
 ---
 
@@ -27,22 +29,21 @@ A aplicação simula o funcionamento de uma empresa fictícia chamada **Connect 
 
 ### 🔐 Sistema de Acesso
 - Tela de login com duas opções de acesso:
-  - **Paciente**
-  - **Psicólogo**
+  - 👨‍⚕️ **Psicólogo**
+  - 👤 **Paciente**
 
 ### 👩‍⚕️ Área do Psicólogo
-- Adicionar novos pacientes
-- Agendar consultas (data, horário e profissional responsável)
-- Visualizar consultas agendadas
-- Gerenciar os atendimentos  
-*(Obs: ainda não foi implementada a opção de excluir pacientes)*
+- ✅ Adicionar novos pacientes
+- 🗓️ Agendar consultas (data, horário e profissional)
+- 📋 Visualizar consultas agendadas  
+*(🔒 Ainda não foi implementada a opção de remover pacientes)*
 
 ### 🧍 Área do Paciente
-- Login com usuário e senha fornecidos pelo psicólogo
-- Visualização de consultas:
+- 🔐 Login com credenciais fornecidas pelo psicólogo
+- 📅 Visualização de consultas:
   - Data
   - Horário
-  - Profissional que realizará o atendimento
+  - Nome do profissional responsável
 
 ---
 
@@ -52,7 +53,43 @@ A aplicação foi desenvolvida com foco em **usabilidade** e **responsividade**,
 
 ---
 
-👨‍💻 Autor
-Pedro Henrique Lourega Rodrigues
-Estudante de Análise e Desenvolvimento de Sistemas
-GitHub: https://github.com/PedroLourega
+## 🚀 Como Rodar o Projeto
+
+```bash
+# 1. Clone este repositório
+git clone https://github.com/PedroLourega/psicoconnect.git
+cd psicoconnect
+
+# 2. Crie e ative um ambiente virtual(Opcional) 
+python -m venv venv
+source venv/bin/activate    # Linux/macOS
+venv\Scripts\activate       # Windows
+
+# 3. Instale as dependências
+pip install flask
+
+# 4. Inicie o servidor Flask
+python app.py
+```
+
+Acesse no navegador: [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 📌 Observações
+
+- 🎓 Projeto com fins educacionais
+- 🔧 Futuras melhorias:
+  - Edição e remoção de pacientes
+  - Envio de notificações por e-mail
+  - Integração com APIs externas
+  - Autenticação segura com tokens
+
+---
+
+## 👨‍💻 Autor <br>
+
+**Pedro Henrique Lourega Rodrigues**  <br>
+Estudante de Análise e Desenvolvimento de Sistemas  <br>
+GitHub: [@PedroLourega](https://github.com/PedroLourega) <br>
+
