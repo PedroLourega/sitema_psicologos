@@ -195,6 +195,7 @@ header .navbar {
     margin-right: 30px;
 
 }
+
 /*Responsive media query code for max width 900px*/
 @media screen and (max-width: 900px){
     :root{

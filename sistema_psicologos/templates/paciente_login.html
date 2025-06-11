@@ -10,7 +10,7 @@
     <!-- Style -->
      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <title>Connect Psicológos | By. Pedro Lourega</title>
+    <title>Acesso Paciente | Connect Psicológos</title>
 </head>
 <body>
      
@@ -36,29 +36,25 @@
 
         <!-- Hero section -->
         <section class="hero-section">
-            <div class="section-content">
-                <div class="hero-details">
-                    <h2>Acesso Paciente</h2>
-                        <div>
-        <form class="contact-form" method="POST" action="/login/psicologo">
-            <input class="form-input" type="text" name="username" placeholder="Usuário" required>
-
-            <input class="form-input" type="password" name="password" placeholder="Senha" required>
-
-            <div class="submit-button">
-                <button id="acess-button" class="button contact-us">Entrar</button>
-                
-            </div>
-            
-            </div>
-            <br>
-        </form>           
+    <div class="section-content">
+        <div class="hero-details">
+            <h2>Acesso Paciente</h2>
+            <form class="contact-form" method="POST" action="{{ url_for('paciente_login') }}">
+                <input class="form-input" type="text" name="username" placeholder="Usuário" required>
+                <input class="form-input" type="password" name="password" placeholder="Senha" required>
+                <div class="submit-button">
+                    <button id="acess-button" class="button contact-us" type="submit">Entrar</button>
                 </div>
-                <div class="hero-image-wrapped">
-                    <img src="{{ url_for('static', filename='images/psicologo-banner.png') }}" alt="Hero" class="hero-image">
-                </div>
-        </section>
-    
+            </form>
+        </div>
+        
+        
+        <div class="hero-image-wrapper">
+            <img src="{{ url_for('static', filename='images/psicologo-banner.png') }}" alt="Hero" class="hero-image">
+        </div>
+    </div>
+</section>
+
 
         <!-- Footers section-->
         <footer class="footer-section">

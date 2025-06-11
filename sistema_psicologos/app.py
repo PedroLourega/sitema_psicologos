@@ -22,12 +22,11 @@ def psicologo_login():
         
         # Aqui pode colocar sua validação de psicólogo (exemplo fixo)
         if username == 'admin' and password == '1234':
-            return render_template('dashboard_psicologo.html')
+            return redirect(url_for('dashboard_psicologo'))  # Redireciona para o dashboard
         else:
             error = 'Usuário ou senha incorretos.'
             
     return render_template('psicologo_login.html', error=error)
-
 # Página de login do paciente
 @app.route('/paciente-login', methods=['GET', 'POST'])
 def paciente_login():
@@ -45,13 +44,15 @@ def paciente_login():
     return render_template('paciente_login.html', error=error)
 
 
+# Dashboard do psicólogo
 @app.route('/dashboard/psicologo')
 def dashboard_psicologo():
-    return 'Área do Psicólogo - Aqui você verá as consultas e poderá cadastrar pacientes e psicólogos.'
+    return render_template('dashboard_psicologo.html')  
 
+# Dashboard do paciente
 @app.route('/dashboard/paciente')
 def dashboard_paciente():
-    return 'Área do Paciente - Aqui você verá suas consultas agendadas.'
+    return render_template('dashboard_paciente.html')  
 
 # garante que o app só será executado se este arquivo for rodado diretamente
 if __name__ == '__main__':
