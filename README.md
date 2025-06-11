@@ -1,4 +1,4 @@
-# 🧠 Connect Psicologos
+# 🧠 PsicoConnect
 
 Sistema web desenvolvido como trabalho da disciplina **Usabilidade, Desenvolvimento Web, Mobile e Jogos**, no curso de Análise e Desenvolvimento de Sistemas (Junho de 2025).
 
